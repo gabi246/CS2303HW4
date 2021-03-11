@@ -7,6 +7,8 @@
 
 #include "Tests.h"
 #include <stdbool.h>
+#include <cstdlib>
+using namespace std;
 
 Tests::Tests() {
 	// TODO Auto-generated constructor stub
@@ -87,6 +89,51 @@ bool Tests::testGotAdjacencyMatrix()
 bool Tests::testMakeLList()
 {
 	bool ok = true;
+
+	 puts("starting testMakeLList");fflush(stdout);
+	 //what are the criteria for success for make LList?
+	 //should be able to make one, add data to it, get the data back
+	 //test case 1:
+
+	 LList* theListP = new LList();
+
+	 //LLNode* theListP = makeEmptyLinkedList();
+
+	 bool rightAnswer = true;
+	 bool answer = theListP->isEmpty();
+	 if(answer!=rightAnswer)
+	 {
+	 	 ok = false;
+	 	 puts("test make LList did not pass.");
+	 }
+
+
+	 //test case 2:
+	 ///LList* theListP2 = new LList();
+	 //LLNode* theListP2 = makeEmptyLinkedList();
+	 Room* theRoomPs[10];
+	 SearchResults* srP = (SearchResults*) malloc(sizeof(SearchResults));
+	 srP->roomNumber= 0;
+	 Room* roomBeingSearchedP = theRoomPs[0];
+	 roomBeingSearchedP->searched = true;
+	 srP->treasure = roomBeingSearchedP->treasure;
+
+	 theListP->savePayload2(srP);
+	 //savePayload(theListP2,srP);
+	 bool rightAnswer2 = false;
+	 bool answer2 = theListP->isEmpty2();
+	 if(answer2!=rightAnswer2)
+	 {
+	 	 ok = false;
+	 	 puts("test savePayload did not pass.");
+	 }
+
+
+	 else
+	 {
+	 	 puts("tests make LList did pass.");
+	 }
+
 	return ok;
 }
 bool Tests::testPrintHistory()

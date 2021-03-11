@@ -6,6 +6,8 @@
  */
 
 #include "LList.h"
+#include <cstdlib>
+using namespace std;
 
 LList::LList() {
 	// TODO Auto-generated constructor stub
