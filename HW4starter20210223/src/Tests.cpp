@@ -139,6 +139,19 @@ bool Tests::testMakeLList()
 bool Tests::testPrintHistory()
 {
 	bool ok = true;
+	puts("starting testPrintHistory");fflush(stdout);
+	LList* theListP = new LList();
+	theListP->printHistory2();
+	//checking that printHistory runs
+	if (ok != true) {
+		ok = false;
+		puts("test testPrintHistory did not pass.");
+	}
+
+	else {
+		puts("tests testPrintHistory did pass.");
+	}
+
 	return ok;
 }
 
